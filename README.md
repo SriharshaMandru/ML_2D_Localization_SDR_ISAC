@@ -1,4 +1,4 @@
-# DeepAoA Localization Final ML Complete
+# ML Assisted 2D localization using SDR based ISAC system with AoA and RSSI Estimation
 
 ## Raw data structure
 
