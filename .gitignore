@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+mlenv/
+venv/
+env/
+
+# Raw IQ data
+data/raw_iq/
+
+# Large SDR files
+*.dat
+*.bin
+*.wav
+
+# Large ML model files
+*.pkl
+*.joblib
+*.h5
+
+# OS junk
+.DS_Store
+Thumbs.db

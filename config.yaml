@@ -1,0 +1,47 @@
+project:
+  name: DeepAoA_Localization_Final_ML_COMPLETE
+  random_state: 42
+
+data_structure:
+  tx_root: data/raw_iq/tx
+  rx_root: data/raw_iq/rx
+  tx_filename: tx_ref.csv
+  rx_file_pattern: rep*.csv
+
+experiment:
+  frequencies_mhz: [850]
+  distances_m: [1, 2, 3, 4]
+  pairs: ["(1,4)", "(2,3)", "(1,3)", "(2,4)"]
+  # IQ data was collected ONLY for positive angles.
+  # Negative-angle inference is handled at runtime via sign correction
+  # using the signed inter-element phase difference (see sign_correct_aoa.py).
+  angles_deg: [0, 15, 30, 45, 60]
+
+antenna_geometry:
+  # Physical layout (left to right):
+  #   Ant1 (USRP1-RX2) | Ant2 (USRP1-TxRx) | Ant3 (USRP2-RX2) | Ant4 (USRP2-TxRx)
+  #
+  # Sign convention  (ULA far-field model):
+  #   phase_diff = angle(x_right * conj(x_left)) = (2pi * d / lambda) * sin(theta)
+  #   positive phase_diff  <->  positive AoA (signal from the right)
+  #   negative phase_diff  <->  negative AoA (signal from the left)
+  pair_baselines_m:
+    "(1,4)": 0.495
+    "(2,3)": 0.165
+    "(1,3)": 0.330
+    "(2,4)": 0.330
+
+preprocess:
+  max_samples_per_file: null
+  remove_dc: true
+  normalize_power: true
+  clip_extreme_values: true
+
+windowing:
+  window_size: 8192
+  step_size: 4096
+
+split:
+  train_reps: ["01", "02", "03"]
+  val_reps: ["04"]
+  test_reps: ["05"]

@@ -1,0 +1,2 @@
+frequency_mhz,distance_folder,angle_folder,rep_keyword,final_angle_deg,final_distance_m,final_x_m,final_y_m,num_windows,mean_window_confidence
+850,2m,30,rep1_rx,30.0,3.166126012802124,1.5830630064010618,2.7419455586693746,235,0.6516771789119107

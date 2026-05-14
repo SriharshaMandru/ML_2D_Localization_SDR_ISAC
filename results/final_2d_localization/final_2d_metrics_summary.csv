@@ -1,0 +1,2 @@
+mean_2d_error_m,median_2d_error_m,rmse_2d_error_m,max_2d_error_m,mean_abs_x_error_m,mean_abs_y_error_m,mean_angle_error_deg,mean_distance_error_m,num_test_files
+0.5745708253022023,0.4920995000000001,0.7847870724600271,2.012750953697036,0.31997436633719467,0.4398708704451167,3.4285714285714284,0.45377738571428566,35
