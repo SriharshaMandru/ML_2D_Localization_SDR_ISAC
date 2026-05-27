@@ -67,9 +67,10 @@ The experimental setup consists of SDR-based RF transmission and reception using
 
 | Antenna Pair | Spacing |
 |---|---|
-| RX-RX | 12 cm |
+| RX2-TX/RX | 12 cm |
+| RX2-TX/RX | 18 cm |
+| TX/RX-RX2 | 12 cm |
 | TX/RX-TX/RX | 6 cm |
-| RX-TX/RX | 18 cm |
 
 The antenna spacing configuration was used for AoA estimation and RF phase difference analysis.
 
@@ -194,7 +195,7 @@ The project evaluates:
 
 Generated outputs include:
 
-- Localization plots
+- Localization plots 
 - Error analysis graphs
 - AoA comparison results
 - RSSI estimation plots
