@@ -7,6 +7,7 @@ This project presents a machine learning-assisted indoor 2D localization system 
 The project combines wireless communication, RF signal processing, machine learning, and SDR hardware implementation for intelligent localization in next-generation wireless systems.
 
 The implementation uses real IQ data collected from Ettus USRP B200 and NI USRP B2900 SDR platforms operating at 850 MHz.
+![Overview FlowChart](data/Overview.png)
 
 ---
 
@@ -38,7 +39,11 @@ The implementation uses real IQ data collected from Ettus USRP B200 and NI USRP 
 ---
 
 # Hardware Setup
+The experimental setup consists of SDR-based RF transmission and reception using Ettus USRP B200 and NI USRP B2900 platforms configured for indoor localization experiments.
 
+## SDR Experimental Setup
+
+![SDR Setup](data/Exp_Setup.jpeg)
 ## SDR Platforms
 
 - Ettus USRP B200
@@ -180,7 +185,7 @@ ML_2D_Localization_SDR_ISAC/
 The project evaluates:
 
 - Localization Accuracy
-- AoA Estimation Performance
+- AoA Estimation Performance 
 - RSSI Prediction Accuracy
 - Coordinate Prediction Error
 - Hybrid Localization Performance
