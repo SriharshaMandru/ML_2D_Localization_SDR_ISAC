@@ -195,11 +195,11 @@ The project evaluates:
 
 Generated outputs include:
 
-- Localization plots 
-- Error analysis graphs
-- AoA comparison results
-- RSSI estimation plots
-- Model evaluation metrics
+- Localization plots ![2D Localization](data/ieee_2d_radar_localization_map.png)
+- Error analysis graphs ![2D Error Analysis](data/ieee_2d_error_cdf.png)
+- AoA estimation results ![AoA Estimation](data/true_vs_predicted_aoa_scatter.png)
+- RSSI estimation plots ![RSSI Estimation](data/distance_true_vs_pred_file_level.png)
+- Model evaluation metrics ![model comparision](data/bar_rmse_2d.png) ![AoA](data/bar_within_1m.png)
 
 ---
 
