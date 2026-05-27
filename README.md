@@ -1,30 +1,279 @@
-# ML Assisted 2D localization using SDR based ISAC system with AoA and RSSI Estimation
+# ML-Assisted 2D Localization using SDR-Based ISAC System with AoA and RSSI Estimation 
 
-## Raw data structure
+## Overview
 
-TX side has one reference file per condition:
+This project presents a machine learning-assisted indoor 2D localization system using Software Defined Radio (SDR)-based Integrated Sensing and Communication (ISAC) architecture. The system estimates user/device location using Angle of Arrival (AoA) and Received Signal Strength Indicator (RSSI) extracted from real-world RF IQ samples.
+
+The project combines wireless communication, RF signal processing, machine learning, and SDR hardware implementation for intelligent localization in next-generation wireless systems.
+
+The implementation uses real IQ data collected from Ettus USRP B200 and NI USRP B2900 SDR platforms operating at 850 MHz.
+
+---
+
+# Project Objectives
+
+- Design an SDR-based indoor localization framework
+- Estimate AoA using antenna phase information
+- Estimate RSSI-based distance characteristics
+- Generate ML-ready datasets from raw IQ samples
+- Develop hybrid AoA + RSSI localization models
+- Compare machine learning algorithms for localization accuracy
+- Build a reproducible RF sensing and localization pipeline
+
+---
+
+# Key Features
+
+- Real SDR hardware implementation
+- RF IQ sample acquisition and preprocessing
+- Covariance matrix-based feature extraction
+- AoA estimation using antenna pair analysis
+- RSSI-assisted localization
+- Hybrid localization framework
+- Machine learning-assisted coordinate prediction
+- Processed dataset generation pipeline
+- GNU Radio + Python integration
+- Real-world wireless sensing workflow
+
+---
+
+# Hardware Setup
+
+## SDR Platforms
+
+- Ettus USRP B200
+- NI USRP B2900
+
+## Operating Parameters
+
+| Parameter | Value |
+|---|---|
+| Carrier Frequency | 850 MHz |
+| Environment | Indoor |
+| Localization Type | 2D Localization |
+| Signal Type | IQ Samples |
+| SDR Interface | GNU Radio |
+
+---
+
+# Antenna Configuration
+
+| Antenna Pair | Spacing |
+|---|---|
+| RX-RX | 12 cm |
+| TX/RX-TX/RX | 6 cm |
+| RX-TX/RX | 18 cm |
+
+The antenna spacing configuration was used for AoA estimation and RF phase difference analysis.
+
+---
+
+# System Workflow
+
+The complete localization pipeline consists of:
+
+1. RF Signal Transmission
+2. IQ Sample Acquisition using SDRs
+3. Signal Preprocessing
+4. Covariance Matrix Computation
+5. AoA Feature Extraction
+6. RSSI Estimation
+7. Dataset Generation
+8. Machine Learning Model Training
+9. 2D Coordinate Prediction
+10. Localization Performance Evaluation
+
+---
+
+# Signal Processing Pipeline
+
+## IQ Data Acquisition
+
+Raw IQ samples were collected using SDR hardware for multiple distances and angular orientations in indoor environments.
+
+## Feature Extraction
+
+The following RF features were extracted:
+
+- Phase Difference
+- Covariance Matrix Features
+- RSSI Features
+- Antenna Pair Characteristics
+- Statistical Signal Features
+
+## Dataset Generation
+
+The raw SDR IQ samples were converted into machine learning-ready datasets for supervised learning-based localization.
+
+---
+
+# Machine Learning Models
+
+The following machine learning algorithms were evaluated:
+
+- Random Forest Regressor
+- Extra Trees Regressor
+- Hybrid AoA-RSSI Estimation Models
+
+The models were trained for:
+
+- AoA estimation
+- RSSI prediction
+- 2D localization coordinate prediction
+
+---
+
+# Repository Structure
 
 ```text
-data/raw_iq/tx/850MHz/1M/(1,3)/-60/tx_ref.csv
+ML_2D_Localization_SDR_ISAC/
+│
+├── data/
+│   ├── processed/
+│   └── raw_iq/
+│
+├── docs/
+│
+├── gnuradio/
+│
+├── scripts/
+│   ├── preprocessing/
+│   ├── models/
+│   ├── evaluation/
+│   └── utils/
+│
+├── Results_ML/
+│
+├── run_full_pipeline.py
+├── run_hybrid.sh
+├── config.yaml
+├── requirements.txt
+└── README.md
 ```
 
-RX side has five repetitions per condition:
+---
 
-```text
-data/raw_iq/rx/850MHz/1M/(1,3)/-60/rep01.csv
-data/raw_iq/rx/850MHz/1M/(1,3)/-60/rep02.csv
-data/raw_iq/rx/850MHz/1M/(1,3)/-60/rep03.csv
-data/raw_iq/rx/850MHz/1M/(1,3)/-60/rep04.csv
-data/raw_iq/rx/850MHz/1M/(1,3)/-60/rep05.csv
+# Technologies Used
+
+## Programming and ML
+
+- Python
+- Scikit-learn
+- NumPy
+- Pandas
+- Matplotlib
+
+## SDR and RF Tools
+
+- GNU Radio
+- Ettus UHD
+- NI USRP Drivers
+
+## Operating System
+
+- Ubuntu Linux
+
+---
+
+# Experimental Results
+
+The project evaluates:
+
+- Localization Accuracy
+- AoA Estimation Performance
+- RSSI Prediction Accuracy
+- Coordinate Prediction Error
+- Hybrid Localization Performance
+
+Generated outputs include:
+
+- Localization plots
+- Error analysis graphs
+- AoA comparison results
+- RSSI estimation plots
+- Model evaluation metrics
+
+---
+
+# Applications
+
+- Indoor Positioning Systems
+- 6G Integrated Sensing and Communication (ISAC)
+- Smart Environments
+- Wireless RF Sensing
+- Autonomous Systems
+- IoT Localization
+- Intelligent Wireless Networks
+
+---
+
+# Future Improvements
+
+- Real-time localization deployment
+- Deep learning-based RF sensing
+- CSI-assisted localization
+- Beamforming-assisted AoA estimation
+- Multi-user localization
+- Edge AI integration
+- Real-time SDR inference pipeline
+
+---
+
+# How to Run
+
+## Clone Repository
+
+```bash
+git clone https://github.com/SriharshaMandru/ML_2D_Localization_SDR_ISAC.git
 ```
 
-RX CSV columns: `I1,Q1,I2,Q2`
+## Navigate to Project
 
-TX CSV columns: `I,Q` or `I_tx,Q_tx`
+```bash
+cd ML_2D_Localization_SDR_ISAC
+```
 
-## Run
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-python3 run_full_pipeline.py
 ```
+
+## Run Full Pipeline
+
+```bash
+python run_full_pipeline.py
+```
+
+---
+
+# Research Focus Areas
+
+- Wireless Communication
+- RF Signal Processing
+- Software Defined Radio
+- Machine Learning for Wireless Systems
+- ISAC Systems
+- Indoor Localization
+- 6G Wireless Technologies
+
+---
+
+# Author
+
+## Mandru Sriharsha
+
+M.Tech – Communication Systems
+
+Areas of Interest:
+- Wireless Communication
+- SDR Systems
+- RF Signal Processing
+- Machine Learning for Wireless Networks
+- 6G ISAC Systems
+
+---
+
+# License
+
+This project is intended for academic and research purposes.
