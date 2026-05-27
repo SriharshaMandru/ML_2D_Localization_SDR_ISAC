@@ -44,10 +44,12 @@ The experimental setup consists of SDR-based RF transmission and reception using
 ## SDR Experimental Setup
 
 ![SDR Setup](data/Exp_Setup.jpeg)
-## SDR Platforms
+## SDR Platforms(Receiver)
 
 - Ettus USRP B200
 - NI USRP B2900
+## Transmitter
+- HackRF One
 
 ## Operating Parameters
 
